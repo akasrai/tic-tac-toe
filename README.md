@@ -1,5 +1,8 @@
 # TIC TAC TOE
-## Tic Tac Toe game developed with React-Redux
+### Tic Tac Toe game developed with React-Redux
+
+### Demo
+https://reactjs-tictactoe.herokuapp.com/
 
 ### Installation
 Clone the project and in terminal

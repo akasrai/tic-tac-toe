@@ -1,24 +1,36 @@
-import React from "react";
-import Board from "../components/board";
-import { connect } from "react-redux";
+import React from 'react';
+import Board from '../components/board';
+import { connect } from 'react-redux';
 import {
   addSymbolAndTurn,
   setGameOver,
   resetGame
-} from "../actions/gameActions";
+} from '../actions/gameActions';
 import {
   checkWinner,
   checkTurn,
   checkGameOver,
   checkIfGameIsTie
-} from "../gameLogic/gameLogic";
+} from '../gameLogic/gameLogic';
 
-import "./components.css";
+import './components.css';
 
 const mapStateToProps = state => {
   let player = checkWinner(state.game.panel);
   let message = null;
   if (player) {
+    window.MIXPANEL.track({
+      name: 'Game over',
+      eventName: 'game over',
+      payload: {
+        user: 'shrijan sharma',
+        change: 'Account Delete',
+        reaseon: 'feels insecure'
+      }
+    })
+      .then(data => console.log(data))
+      .catch(err => console.error(err));
+
     player = player.toString();
     message =
       "Congrats!!! Player '" +
@@ -33,7 +45,7 @@ const mapStateToProps = state => {
       message ||
       checkIfGameIsTie(state.game.panel) ||
       checkTurn(state.game.turn) + state.game.message,
-    boxes: player ? player.toString().split(",") : []
+    boxes: player ? player.toString().split(',') : []
   };
 };
 
@@ -61,12 +73,12 @@ const Game = ({
       <h1>Tic-Tac-Toe</h1>
       <p>{message} </p>
       <button className="reset-button" onClick={() => resetGame()}>
-      RESET
-    </button>
+        RESET
+      </button>
     </div>
     <div
       className={
-        gameOver ? "game-panel clearfix game-over" : "game-panel clearfix"
+        gameOver ? 'game-panel clearfix game-over' : 'game-panel clearfix'
       }
     >
       {gamePanel.map((box, index) => {
@@ -86,7 +98,6 @@ const Game = ({
         );
       })}
     </div>
-    
   </div>
 );
 

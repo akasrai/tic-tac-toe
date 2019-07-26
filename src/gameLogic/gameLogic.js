@@ -14,7 +14,7 @@ export const checkWinner = player => {
   for (let i = 0; i < winingState.length; i++) {
     const [a, b, c] = winingState[i];
     if (
-      (player[a] === "X" || player[a] === "O") &&
+      (player[a] === 'X' || player[a] === 'O') &&
       (player[a] === player[b] && player[b] === player[c])
     ) {
       gameOverStatus = true;
@@ -25,7 +25,7 @@ export const checkWinner = player => {
 };
 
 export const checkTurn = turn => {
-  if (turn === "X") {
+  if (turn === 'X') {
     return "It's X turn.";
   } else {
     return "It's O turn.";
@@ -33,9 +33,20 @@ export const checkTurn = turn => {
 };
 
 export const checkIfGameIsTie = players => {
-  if (players.every(position => position !== "")) {
+  if (players.every(position => position !== '')) {
+    window.MIXPANEL.track({
+      name: 'Game over',
+      eventName: 'game over',
+      payload: {
+        user: 'shrijan sharma',
+        change: 'Account Delete',
+        reaseon: 'feels insecure'
+      }
+    })
+      .then(data => console.log(data))
+      .catch(err => console.error(err));
     gameOverStatus = true;
-    return "The game is tie.";
+    return 'The game is tie.';
   }
 };
 

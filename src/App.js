@@ -6,16 +6,16 @@ import store from './store';
 import './App.css';
 
 class App extends Component {
-  configureMixpanel = () => {
-    window.MIXPANEL.configure({
-      apiKey: 'abc1234',
-      email: 'akasky72@gmail.com'
-    }).then(() => window.MIXPANEL.identify());
-  };
+  // configureMixpanel = () => {
+  //   window.MIXPANEL.configure({
+  //     apiKey: 'abc1234',
+  //     email: 'akasky72@gmail.com'
+  //   }).then(() => window.MIXPANEL.identify());
+  // };
 
-  componentDidMount = () => {
-    this.configureMixpanel();
-  };
+  // componentDidMount = () => {
+  //   this.configureMixpanel();
+  // };
 
   render() {
     return (

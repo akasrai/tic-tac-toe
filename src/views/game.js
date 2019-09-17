@@ -19,17 +19,17 @@ const mapStateToProps = state => {
   let player = checkWinner(state.game.panel);
   let message = null;
   if (player) {
-    window.MIXPANEL.track({
-      name: 'Game over',
-      eventName: 'game over',
-      payload: {
-        user: 'shrijan sharma',
-        change: 'Account Delete',
-        reaseon: 'feels insecure'
-      }
-    })
-      .then(data => console.log(data))
-      .catch(err => console.error(err));
+    // // window.MIXPANEL.track({
+    // //   name: 'Game over',
+    // //   eventName: 'game over',
+    // //   payload: {
+    // //     user: 'shrijan sharma',
+    // //     change: 'Account Delete',
+    // //     reaseon: 'feels insecure'
+    // //   }
+    // // })
+    //   .then(data => console.log(data))
+    //   .catch(err => console.error(err));
 
     player = player.toString();
     message =

@@ -24,6 +24,8 @@ export const checkWinner = player => {
   }
 };
 
+// this is test for ci-circle
+
 export const checkTurn = turn => {
   if (turn === 'X') {
     return "It's X turn.";

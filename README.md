@@ -1,5 +1,5 @@
-# TIC TAC TOE
-### Tic Tac Toe game developed with React-Redux
+## Tic Tac Toe
+A Tic Tac Toe game developed with React-Redux
 
 ### Demo
 https://reactjs-tictactoe.herokuapp.com/

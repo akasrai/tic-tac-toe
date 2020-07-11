@@ -14,3 +14,6 @@ To start the game
 ```
 npm run start
 ```
+
+***
+Created with Javascript

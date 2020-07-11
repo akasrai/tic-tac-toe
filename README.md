@@ -16,4 +16,4 @@ npm run start
 ```
 
 ***
-Created with Javascript
+Created with ReactJS
